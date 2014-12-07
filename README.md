@@ -36,7 +36,7 @@ As owner:
     $ sudo mv id_rsa.pub /home/plug-repo/owner.pub
     $ sudo chown plug-repo:plug-repo /home/plug-repo/owner.pub
     $ sudo su - plug-repo
-    $ curl https://raw.githubusercontent.com/pirj/plug-repo/master/install.sh | bash -s
+    $ curl https://raw.githubusercontent.com/pirj/plug-repo/master/init.sh | bash -s
     $ edit info
 
 ## Is it any good?
