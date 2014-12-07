@@ -1,0 +1,11 @@
+case "$1" in
+  "publish")
+    bin/commands/publish $2 $3
+    ;;
+  "rm")
+    bin/commands/rm $2
+    ;;
+  *)
+    bin/access/public $@
+    ;;
+esac

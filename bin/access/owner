@@ -1,0 +1,11 @@
+case "$1" in
+  "collab")
+    bin/commands/collab $2
+    ;;
+  "uncollab")
+    bin/commands/uncollab $2
+    ;;
+  *)
+    bin/access/collab $@
+    ;;
+esac

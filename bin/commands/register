@@ -1,0 +1,3 @@
+# TODO: check if applicant already exists
+echo $@ >> applicants
+
