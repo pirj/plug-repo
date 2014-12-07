@@ -5,28 +5,30 @@ This is and SSH based and command line controlled plugin repository.
 ## Rationale
 
 Most plugin repositories are web-first, while this is usually overkill.
+
 SSH is powerful enough to perform authentication and easy to build authorization around it.
+
 Easy to install. No database or fancy tools required.
 
 ## Synopsis
 
 As collaborator:
 
-    $ pr publish tcsh colorize-output https://github.com/pirj/tcsh-colorize-output.git
-    $ pr rm tcsh colorize-output
+    $ pr tcsh publish colorize-output https://github.com/pirj/tcsh-colorize-output.git
+    $ pr tcsh rm colorize-output
 
 As user:
 
-    $ pr add tcsh tcsh.plug-repo.net
-    $ pr info tcsh
-    $ pr ls tcsh
-    $ pr fetch tcsh colorize-output
-    $ pr register tcsh
+    $ pr tcsh add tcsh.plug-repo.net
+    $ pr tcsh info
+    $ pr tcsh ls
+    $ pr tcsh fetch colorize-output
+    $ pr tcsh register
 
 As owner:
 
-    $ pr collab john-doe@no-panties.org
-    $ pr uncollab someone-you-thought-you-can-trust@traitor.net
+    $ pr tcsh collab john-doe@no-panties.org
+    $ pr tcsh uncollab someone-you-thought-you-can-trust@traitor.net
 
 ## Installation
 
@@ -38,6 +40,16 @@ As owner:
     $ sudo su - plug-repo
     $ curl https://raw.githubusercontent.com/pirj/plug-repo/master/init.sh | bash -s
     $ edit info
+
+## What about command line client?
+
+You can use plain SSH client:
+
+    $ ssh plug-repo@tcsh.plug-repo.net info
+
+Or a [convenience wrapper](https://github.com/pirj/plug-repo-client):
+
+    $ pr tcsh info
 
 ## Is it any good?
 
