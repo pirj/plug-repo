@@ -2,7 +2,8 @@
 
 # wget https://github.com/pirj/dotfiles/archive/master.zip | unzip -c ?
 git clone --depth=1 https://github.com/pirj/plug-repo.git
-rm -rf .git
+mv plug-repo/* .
+rm -rf plug-repo
 
 mkdir -m 700 .ssh
 touch .ssh/authorized_keys
