@@ -5,7 +5,7 @@ git clone --depth=1 https://github.com/pirj/plug-repo.git
 mv plug-repo/* .
 rm -rf plug-repo
 
-mkdir -m 700 .ssh
+mkdir -p -m 700 .ssh
 touch .ssh/authorized_keys
 chmod 600 .ssh/authorized_keys
 OWNER_PUBKEY=$(<owner.pub)
@@ -15,4 +15,4 @@ no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding,comma
 no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding,command="bin/access/owner \$SSH_ORIGINAL_COMMAND" $OWNER_PUBKEY
 OwnerAndPublic
 
-mkdir repo
+mkdir -p repo
