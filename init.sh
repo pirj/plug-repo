@@ -2,7 +2,8 @@
 
 # wget https://github.com/pirj/dotfiles/archive/master.zip | unzip -c ?
 git clone --depth=1 https://github.com/pirj/plug-repo.git
-mv plug-repo/* .
+mv plug-repo/bin .
+mv plug-repo/info .
 rm -rf plug-repo
 
 mkdir -p -m 700 .ssh
