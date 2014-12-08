@@ -41,9 +41,9 @@ As owner:
     $ curl https://raw.githubusercontent.com/pirj/plug-repo/master/init.sh | bash -s
     $ edit info
 
-## What about command line client?
+## How to access repository we have just deployed
 
-You can use plain SSH client:
+You can use plain SSH client. For public access you will need a public keypair (id\_plug-repo\_public). You should put it to your ~/.ssh folder, or edit your ~/.ssh/config, or use a dedicated ssh\_config file.
 
     $ ssh plug-repo@tcsh.plug-repo.net info
 
