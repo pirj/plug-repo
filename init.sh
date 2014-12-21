@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# wget https://github.com/pirj/dotfiles/archive/master.zip | unzip -c ?
-git clone --depth=1 https://github.com/pirj/plug-repo.git
-mv plug-repo/bin .
-mv plug-repo/info .
-mv plug-repo/id_plug-repo_public.pub .
-rm -rf plug-repo
+HEAD=master
+wget -O - https://github.com/pirj/plug-repo/archive/$HEAD.tar.gz | tar -xz
+mv plug-repo-$HEAD/bin .
+mv plug-repo-$HEAD/info .
+mv plug-repo-$HEAD/id_plug-repo_public.pub .
+rm -rf plug-repo-$HEAD
 
 mkdir -p -m 700 .ssh
 touch .ssh/authorized_keys
