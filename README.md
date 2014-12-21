@@ -12,23 +12,34 @@ Easy to install. No database or fancy tools required.
 
 ## Synopsis
 
-As collaborator:
-
-    $ pr tcsh publish colorize-output https://github.com/pirj/tcsh-colorize-output.git
-    $ pr tcsh rm colorize-output
-
 As user:
 
     $ pr tcsh add tcsh.plug-repo.net
+    Repository tcsh added
     $ pr tcsh info
+    TCSH plugins repo
+    Owner: Kimmo Suominen
     $ pr tcsh ls
+    colorize-output Fancy colors in your shell
+    enlarge-your-history More entries in history
     $ pr tcsh fetch colorize-output
+    colorize-output is fetched to ~/.tcsh/plugins
     $ pr tcsh register
+    Membership request is sent to tcsh
+
+As collaborator:
+
+    $ pr tcsh publish colorize-output https://github.com/pirj/tcsh-colorize-output.git
+    colorize-output added to tcsh
+    $ pr tcsh rm colorize-output
+    colorize-output removed from tcsh
 
 As owner:
 
     $ pr tcsh collab john-doe@no-panties.org
+    john-doe is added as a collaborator to tcsh
     $ pr tcsh uncollab someone-you-thought-you-can-trust@traitor.net
+    someone-you-thought-you-can-trust is removed from collaborators in tcsh
 
 ## Installation
 
