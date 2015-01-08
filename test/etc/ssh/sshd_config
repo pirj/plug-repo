@@ -1,0 +1,21 @@
+# This file is only used for testing
+# Do NOT use it as an example of production sshd_config
+
+# AuthorizedKeysFile .ssh/authorized_keys
+
+ListenAddress 127.0.0.1
+
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+PermitRootLogin no
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM no # Check how it worked for Apache
+
+AllowAgentForwarding no
+AllowTcpForwarding no
+X11Forwarding no
+PermitTTY no
+PermitUserEnvironment no
+
+UsePrivilegeSeparation yes

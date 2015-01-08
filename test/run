@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+PLUG_HOME=sandbox/home
+SSH_PORT=2222
+
+rm -rf $PLUG_HOME/plug-repo
+mkdir -p $PLUG_HOME/plug-repo
+cp -R bin $PLUG_HOME/plug-repo
+cp id_plug-repo_public.pub $PLUG_HOME/plug-repo
+cp test/id_owner.pub $PLUG_HOME/plug-repo
+cp bootstrap.sh $PLUG_HOME/plug-repo
+proot -R / -b $PLUG_HOME:/home! -w /home/plug-repo ./bootstrap.sh
+echo 'Test repo' > $PLUG_HOME/plug-repo/info
+
+proot -R / -b $PLUG_HOME:/home! -b test/etc/ssh:/etc/ssh! -b test/etc/passwd:/etc/passwd! -w /home/plug-repo /usr/bin/sshd -p $SSH_PORT &
+SSHD_PID=$!
+echo SSH launched in a sandbox
+
+sleep 0.1 # Sometimes tests are being run so fast that it's too early to kill ssh daemon
+
+ssh plug-repo@127.0.0.1 -p $SSH_PORT -i id_plug-repo_public info
+ssh plug-repo@127.0.0.1 -p $SSH_PORT -i id_plug-repo_public info
+
+kill -QUIT $SSHD_PID
+echo Done
